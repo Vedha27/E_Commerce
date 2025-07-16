@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin - Manage Products</title>
+    <link rel="stylesheet" href="admin-products.css">
+ </head>
+<body>
+
+  <h2>Admin - Product Management</h2>
+
+  <div class="product-form">
+    <h3>Add New Product</h3>
+    <input type="text" id="name" placeholder="Product Name" required />
+    <input type="text" id="category" placeholder="Category" />
+    <input type="number" id="price" placeholder="Price" required />
+    <input type="number" id="stock" placeholder="Stock" required />
+    <input type="text" id="imageUrl" placeholder="Image URL" />
+    <button onclick="addProduct()">Add Product</button>
+  </div>
+	
+	
+
+<div id="productsContainer" class="product-grid"></div>
+	
+  <div class="product-table">
+    <h3>All Products</h3>
+    <table id="productTable">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Category</th>
+          <th>Price</th>
+          <th>Stock</th>
+          <th>Image</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+<div id="toast" class="toast">Product updated successfully!</div>
+
+  <script src="admin-products.js" defer>
+    
+  </script>
+
+</body>
+</html>

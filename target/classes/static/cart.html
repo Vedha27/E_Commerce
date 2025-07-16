@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Cart - Ecom</title>
+  <link rel="stylesheet" href="cart.css" />
+</head>
+<body>
+
+  <div class="cart-wrapper">
+    <h2>🛒 My Cart</h2>
+
+    <div class="cart-items" id="cartItems">
+      <!-- Cart items will be injected here -->
+    </div>
+
+    <div class="cart-summary">
+      <p><strong>Total Amount:</strong> ₹<span id="totalAmount">0</span></p>
+      <button class="add-more-btn" onclick="goBack()">+ Add More Items</button>
+      <button class="order-btn" onclick="placeOrder()">✅ Place Order</button>
+      <button id="myOrdersBtn" onclick="goToOrders()">🧾 My Orders</button>
+      
+    </div>
+  </div>
+
+  <script src="cart.js" defer></script>
+</body>
+</html>

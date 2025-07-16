@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Customer Products - Ecom App</title>
+  <link rel="stylesheet" href="customer-products.css">
+</head>
+<body>
+
+  <h2>Welcome, Customer</h2>
+
+  <div class="top-bar">
+    <input type="text" id="searchInput" placeholder="Search products...">
+    
+    <select id="sortSelect">
+      <option value="">-- Sort By --</option>
+      <option value="price-asc">Price: Low to High</option>
+      <option value="price-desc">Price: High to Low</option>
+      <option value="category-asc">Category: A-Z</option>
+      <option value="category-desc">Category: Z-A</option>
+    </select>
+
+    <button class="view-cart-btn" onclick="goToCart()">🛒 View Cart</button>
+  </div>
+
+  <div id="productsContainer" class="products-container"></div>
+
+  <script src="customer-products.js" defer></script>
+
+</body>
+</html>

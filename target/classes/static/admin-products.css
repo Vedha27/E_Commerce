@@ -1,0 +1,66 @@
+body {
+      font-family: Arial, sans-serif;
+      background: #f8f9fa;
+      margin: 20px;
+    }
+    h2 {
+      color: #007bff;
+    }
+    .product-form, .product-table {
+      margin-bottom: 30px;
+    }
+    input, button {
+      padding: 8px;
+      margin: 5px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+    }
+    th, td {
+      padding: 10px;
+      border: 1px solid #ddd;
+    }
+    th {
+      background: #007bff;
+      color: white;
+    }
+    button.update {
+      background-color: orange;
+      color: white;
+      border: none;
+    }
+    button.delete {
+      background-color: red;
+      color: white;
+      border: none;
+    }
+    
+    
+    .toast {
+  visibility: hidden;
+  min-width: 250px;
+  background-color: #28a745; /* Green */
+  color: white;
+  text-align: center;
+  border-radius: 8px;
+  padding: 12px;
+  position: fixed;
+  z-index: 1000;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 16px;
+  opacity: 0;
+  transition: opacity 0.4s, bottom 0.4s;
+}
+
+.toast.show {
+  visibility: visible;
+  opacity: 1;
+  bottom: 50px;
+}
+    
