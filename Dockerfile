@@ -1,17 +1,26 @@
-# Use a lightweight OpenJDK base image
-FROM eclipse-temurin:21-jdk-alpine
+# Stage 1: Build the application using Maven and JDK
+FROM maven:3.9.6-eclipse-temurin-21-alpine AS builder
 
-# Set application JAR file name
-ARG JAR_FILE=target/ecommerce-0.0.1-SNAPSHOT.jar
-
-# Set working directory inside container
+# Set working directory
 WORKDIR /app
 
-# Copy built JAR from local to container
-COPY ${JAR_FILE} app.jar
+# Copy all project files to the container
+COPY . .
 
-# Expose port 8080
+# Build the project and skip tests
+RUN mvn clean package -DskipTests
+
+# Stage 2: Run the application using a lightweight JDK image
+FROM eclipse-temurin:21-jdk-alpine
+
+# Set working directory
+WORKDIR /app
+
+# Copy only the built JAR from the builder stage
+COPY --from=builder /app/target/ecommerce-0.0.1-SNAPSHOT.jar app.jar
+
+# Expose the port Spring Boot runs on
 EXPOSE 8080
 
-# Run the JAR
-ENTRYPOINT ["java", "-jar", "app.jar"]
+# Start the application
+CMD ["java", "-jar", "app.jar"]
